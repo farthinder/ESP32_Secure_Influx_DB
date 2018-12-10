@@ -18,6 +18,12 @@ class InfluxData {
     _values = (_values == "") ? (" ") : (_values += ",");
     _values += key + "=" + String(value);
   }
+  
+  void addValue(String key, String value) {
+    _values = (_values == "") ? (" ") : (_values += ",");
+    _values += key + "=\"" + value + "\"";
+  }
+
 
   String toString() const { return _measurement + _tags + _values; }
 
